@@ -30,11 +30,11 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(num) {
-  for (let i=0; 1 < num; 1 ++)
+// function summation(num) {
+//   for (let i=0; 1 < num; 1 ++)
   
 
-  }
+//   }
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -59,9 +59,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(data){
+    const displayNames = [];
+    data.forEach(function(item){
+      displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+    });
+    return displayNames;
   }
+
+  console.log('request 1',animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -104,7 +110,7 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
+  function consume(){
     /*Your Code Here */
   }
  
@@ -208,7 +214,7 @@ class CuboidMakerTwo{
   foo();
   module.exports = {
     foo,
-    summation,
+    // summation,
     animalNames,
     lowerCaseNames,
     lowPopulationAnimals,
