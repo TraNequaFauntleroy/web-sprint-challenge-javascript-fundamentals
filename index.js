@@ -20,9 +20,6 @@ myFunction();
   `nestedFunction() is a closure which means nestedFunction() can reach out of it's scope to grab a variable defined in an outer function`
 
 
-
-
-
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
     1. Receive a number 
@@ -30,11 +27,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-// function summation(num) {
-//   for (let i=0; 1 < num; 1 ++)
-  
+function summation(num) {
+  let count = 0;
+  for (let i=0; 1 < num; i++){
 
-//   }
+
+  }
+  return count
+
+  }
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -207,16 +208,29 @@ console.log(cuboid.surfaceArea()); // 130
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor(attributes){
+    this.length = attributes.length,
+    this.height = attributes.height,
+    this.width = attributes.width
+  }
+  volume() {
+    return this.length * this.width * this.height;
+  }
+  surfaceArea() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+  }
 }
+
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
-
-
-
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
@@ -234,7 +248,7 @@ class CuboidMakerTwo{
   foo();
   module.exports = {
     foo,
-    // summation,
+    summation,
     animalNames,
     lowerCaseNames,
     lowPopulationAnimals,
