@@ -29,13 +29,17 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 
 function summation(num) {
   let count = 0;
-  for (let i=0; 1 < num; i++){
-
-
+  return function add(){
+    for (let i = 0; 1 < num; i++){
+    count += 1;
   }
-  return count
-
+  return count;
   }
+  
+}
+
+
+  console.log('task 2',summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -259,4 +263,4 @@ console.log(cuboidTwo.surfaceArea()); // 130
     greeting,
     CuboidMaker,
     CuboidMakerTwo
-  }
+  } 
